@@ -41,10 +41,16 @@ import { IconX } from '@tabler/icons'
 import { getUniqueNodeId, initNode, getEdgeLabelName, rearrangeToolsOrdering } from 'utils/genericHelper'
 import useNotifier from 'utils/useNotifier'
 
+
+
+import svgPattern from './pattern.svg';
+
 const nodeTypes = { customNode: CanvasNode }
 const edgeTypes = { buttonedge: ButtonEdge }
 
 // ==============================|| CANVAS ||============================== //
+
+
 
 const Canvas = () => {
     const theme = useTheme()
@@ -347,7 +353,7 @@ const Canvas = () => {
             errorFailed(`Failed to retrieve chatflow: ${errorData}`)
         }
 
-          
+
     }, [getSpecificChatflowApi.data, getSpecificChatflowApi.error])
 
     // Create new chatflow successful
@@ -363,7 +369,7 @@ const Canvas = () => {
             errorFailed(`Failed to save chatflow: ${errorData}`)
         }
 
-          
+
     }, [createNewChatflowApi.data, createNewChatflowApi.error])
 
     // Update chatflow successful
@@ -377,7 +383,7 @@ const Canvas = () => {
             errorFailed(`Failed to save chatflow: ${errorData}`)
         }
 
-          
+
     }, [updateChatflowApi.data, updateChatflowApi.error])
 
     // Test chatflow failed
@@ -398,7 +404,7 @@ const Canvas = () => {
             })
         }
 
-          
+
     }, [testChatflowApi.error])
 
     useEffect(() => setChatflow(canvasDataStore.chatflow), [canvasDataStore.chatflow])
@@ -430,7 +436,7 @@ const Canvas = () => {
             setTimeout(() => dispatch({ type: REMOVE_DIRTY }), 0)
         }
 
-          
+
     }, [])
 
     useEffect(() => {
@@ -452,7 +458,7 @@ const Canvas = () => {
             window.removeEventListener('paste', handlePaste)
         }
 
-          
+
     }, [])
 
     useEffect(() => {
@@ -460,7 +466,7 @@ const Canvas = () => {
             handleLoadFlow(templateFlowData)
         }
 
-          
+
     }, [templateFlowData])
 
     usePrompt('You have unsaved changes! Do you want to navigate away?', canvasDataStore.isDirty)
@@ -486,7 +492,7 @@ const Canvas = () => {
                         />
                     </Toolbar>
                 </AppBar>
-                <Box sx={{ pt: '70px', height: '100vh', width: '100%' }}>
+                <Box sx={{ pt: '70px', height: '100vh', width: '100%', background: `url("${svgPattern}") repeat`, }}>
                     <div className='reactflow-parent-wrapper'>
                         <div className='reactflow-wrapper' ref={reactFlowWrapper}>
                             <ReactFlow
@@ -514,7 +520,6 @@ const Canvas = () => {
                                         transform: 'translate(-50%, -50%)'
                                     }}
                                 />
-                                <Background color='#aaa' gap={16} />
                                 <AddNodes nodesData={getNodesApi.data} node={selectedNode} />
                                 <ChatPopUp chatflowid={chatflowId} />
                             </ReactFlow>
