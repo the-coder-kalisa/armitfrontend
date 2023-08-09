@@ -110,7 +110,7 @@ const ProfileSection = ({ username, handleLogout }) => {
                     setLoading(false)
                 }
             } else {
-                alert('Incorrect Flowise Database Format')
+                alert('Incorrect Database Format')
             }
         }
         reader.readAsText(file)
@@ -216,18 +216,6 @@ const ProfileSection = ({ username, handleLogout }) => {
                                                         <IconFileExport stroke={1.5} size='1.3rem' />
                                                     </ListItemIcon>
                                                     <ListItemText primary={<Typography variant='body2'>Export Database</Typography>} />
-                                                </ListItemButton>
-                                                <ListItemButton
-                                                    sx={{ borderRadius: `${customization.borderRadius}px` }}
-                                                    onClick={() => {
-                                                        setOpen(false)
-                                                        setAboutDialogOpen(true)
-                                                    }}
-                                                >
-                                                    <ListItemIcon>
-                                                        <IconInfoCircle stroke={1.5} size='1.3rem' />
-                                                    </ListItemIcon>
-                                                    <ListItemText primary={<Typography variant='body2'>About Flowise</Typography>} />
                                                 </ListItemButton>
                                                 {localStorage.getItem('username') && localStorage.getItem('password') && (
                                                     <ListItemButton

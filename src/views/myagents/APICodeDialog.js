@@ -607,7 +607,7 @@ query({
                                 {getIsChatflowStreamingApi.data?.isStreaming && (
                                     <p>
                                         Read&nbsp;
-                                        <a rel='noreferrer' target='_blank' href='https://docs.flowiseai.com/how-to-use#streaming'>
+                                        <a rel='noreferrer' target='_blank' href=''>
                                             here
                                         </a>
                                         &nbsp;on how to stream response back to application
