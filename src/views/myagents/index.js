@@ -138,19 +138,19 @@ const Chatflows = () => {
     };
 
     const customButtonStyles = {
-        backgroundColor: '#757575', 
-        color: '#ffffff', 
+        backgroundColor: '#757575',
+        color: '#ffffff',
         '&:hover': {
-            backgroundColor: '#757575', 
+            backgroundColor: '#757575',
         },
         borderRadius: '30px',
     };
 
     const modalButtonStyles = {
-        backgroundColor: '#757575', 
-        color: '#ffffff', 
+        backgroundColor: '#757575',
+        color: '#ffffff',
         '&:hover': {
-            backgroundColor: '#757575', 
+            backgroundColor: '#757575',
         },
         borderRadius: '30px',
         width: "50%",
@@ -181,7 +181,7 @@ const Chatflows = () => {
                             Simple Canvas
                         </Typography>
                     </Button>
-                    <Button variant="contained" sx={modalButtonStyles} onClick={() => handleOpen()} >
+                    <Button variant="contained" sx={modalButtonStyles} onClick={() => navigate('/advanced')} >
                         <Typography id="modal-title" variant="h1" component="h2" style={{ color: 'white' }}>
                             Advanced Canvas
                         </Typography>

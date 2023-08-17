@@ -41,7 +41,7 @@ const dashboard = {
         },
         {
             id: 'knowledgebas',
-            title: 'Knowledgebas',
+            title: 'Knowledgebas...',
             type: 'item',
             url: '/knowledgebas',
             breadcrumbs: true
