@@ -159,7 +159,7 @@ const Chatflows = () => {
     };
 
     return (
-        <MainCard sx={{ background: customization.isDarkMode ? theme.palette.common.black : '' }}>
+        <MainCard >
             <div style={{ width: '100%' }}>
                 <IconButton color="primary" aria-label="Add" sx={customButtonStyles} style={{ float: 'right', marginLeft: "10px" }}>
                     <AddIcon />
