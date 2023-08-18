@@ -20,7 +20,6 @@ import ErrorAlert from 'views/advanced/alerts/error'
 import NoticeAlert from "views/advanced/alerts/notice";
 import SuccessAlert from "views/advanced/alerts/success";
 import CrashErrorComponent from "views/advanced/components/CrashErrorComponent";
-import Header from "views/advanced/components/headerComponent";
 import { alertContext } from "views/advanced/contexts/alertContext";
 import { locationContext } from "views/advanced/contexts/locationContext";
 import { TabsContext } from "views/advanced/contexts/tabsContext";

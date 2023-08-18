@@ -10,6 +10,7 @@ import { AppBar, Box, CssBaseline, Toolbar, useMediaQuery } from '@mui/material'
 import Header from './Header'
 import Sidebar from './Sidebar'
 import { drawerWidth } from 'store/constant'
+import background from "assets/images/background.png";
 import { SET_MENU } from 'store/actions'
 
 // styles
@@ -23,7 +24,7 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(({
             duration: theme.transitions.duration.leavingScreen
         }),
         [theme.breakpoints.up('md')]: {
-            marginLeft: -(drawerWidth - 20),
+            marginLeft: -(drawerWidth-120),
             width: `calc(100% - ${drawerWidth}px)`
         },
         [theme.breakpoints.down('md')]: {
@@ -43,7 +44,7 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(({
             easing: theme.transitions.easing.easeOut,
             duration: theme.transitions.duration.enteringScreen
         }),
-        marginLeft: 0,
+        marginLeft: 70,
         borderBottomLeftRadius: 0,
         borderBottomRightRadius: 0,
         width: `calc(100% - ${drawerWidth}px)`,
@@ -75,7 +76,7 @@ const MainLayout = () => {
     }, [matchDownMd])
 
     return (
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex', backgroundImage: `url(${background})` }}>
             <CssBaseline />
             {/* header */}
             <AppBar
@@ -84,12 +85,12 @@ const MainLayout = () => {
                 color='inherit'
                 elevation={0}
                 sx={{
-                    bgcolor: theme.palette.background.default,
+                    bgcolor: "transparent",
                     transition: leftDrawerOpened ? theme.transitions.create('width') : 'none'
                 }}
             >
                 <Toolbar>
-                    <Header handleLeftDrawerToggle={handleLeftDrawerToggle} />
+                    <Header drawerOpen={leftDrawerOpened} handleLeftDrawerToggle={handleLeftDrawerToggle} />
                 </Toolbar>
             </AppBar>
 

@@ -1,22 +1,38 @@
-import logo from 'assets/images/logo.svg'
-import logoDark from 'assets/images/logo.svg'
+import logo from "assets/images/logo.svg";
+import { useEffect, useState } from "react";
 
-import { useSelector } from 'react-redux'
+import smallLogo from "assets/images/small_logo.svg";
 
 // ==============================|| LOGO ||============================== //
 
-const Logo = () => {
-    const customization = useSelector((state) => state.customization)
+const Logo = ({ drawn }) => {
+  const [changeImage, setChangeImage] = useState(false);
+  useEffect(() => {
+    // set time out of 500ms and change image
+    if (drawn) {
+      setTimeout(() => {
+        setChangeImage(true);
+      }, 500);
+    } else {
+      setChangeImage(false);
+    }
+  }, [drawn]);
 
-    return (
-        <div style={{ alignItems: 'center', display: 'flex', flexDirection: 'row' }}>
-            <img
-                style={{ objectFit: 'contain', height: 'auto', width: 150 }}
-                src={customization.isDarkMode ? logoDark : logo}
-                alt=''
-            />
-        </div>
-    )
-}
+  return (
+    <div
+      style={{ alignItems: "center", display: "flex", flexDirection: "row" }}
+    >
+      <img
+        style={{
+          objectFit: "contain",
+          height: "auto",
+          width: changeImage ? 39 : 150,
+        }}
+        src={changeImage ? smallLogo : logo}
+        alt=""
+      />
+    </div>
+  );
+};
 
-export default Logo
+export default Logo;
